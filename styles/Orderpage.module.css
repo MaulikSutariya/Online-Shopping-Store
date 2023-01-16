@@ -1,0 +1,37 @@
+.oph1{
+    text-align: center;
+    margin: 50px 0;
+}
+.oph1 h1{
+    color: #f35320;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f35320;
+}
+.orderbrand h5{
+    color: darkgray;
+    font-size: 15px;
+}
+.orderbrand h6{
+    font-size: 16px;
+    font-weight: 500;
+    color: green;
+    margin-bottom: 20px;
+}
+.trackorder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+.trackorder h5{
+    font-size: 18px;
+    font-weight: 500    ;
+}
+.trackorder button{
+    width: 170px;
+    height: 45px;
+    border: none;
+    background-color: #f35320;
+    color: white;
+    border-radius: 7px;
+}

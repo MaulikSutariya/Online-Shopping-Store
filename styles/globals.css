@@ -1,0 +1,18 @@
+*{
+    outline: none;
+    user-select: none;
+    
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+input{
+    user-select: block;
+}
+a{
+    text-decoration: none!important;
+}
+li{
+    list-style-type: none;
+}
+

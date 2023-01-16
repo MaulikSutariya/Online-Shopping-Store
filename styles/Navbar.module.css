@@ -1,0 +1,537 @@
+.mainnavbar {
+  position: sticky;
+  margin-top: 20px;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+.navbarItems ul {
+  display: flex;
+  margin: 0;
+}
+.navbarItems ul li {
+  list-style-type: none;
+  margin: 0 20px;
+  color: #111111;
+  font-size: 16px;
+  font-weight: 600;
+}
+.togextranav {
+  display: none;
+}
+
+.navbarItems {
+  display: flex;
+  align-items: center;
+}
+.navbarItems svg {
+  margin-left: -35px;
+  color: #f35320;
+}
+.navbarItems input {
+  height: 45px;
+  border: 1px solid #f5f5f5;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  width: 250px;
+  padding: 0 15px;
+  caret-color: #f35320;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  margin-top: 20px;
+}
+.navbarcont {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.navbarup {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navup2 {
+  display: flex;
+  align-items: center;
+}
+.navupitems {
+  margin: 0 20px;
+  height: 35px;
+  width: 35px;
+  background-color: transparent;
+  border: 1px solid #f3f3f3;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 50px;
+}
+.navupitems svg {
+  color: #f35320;
+  margin-top: -3px;
+}
+.navup1 {
+  display: flex;
+  align-items: center;
+}
+.navup1 li {
+  list-style-type: none;
+  margin-right: 50px;
+  color: #6b6b84;
+  font-size: 16px;
+  font-weight: 400;
+}
+.navup1 li svg {
+  margin-right: 5px;
+  color: #f35320;
+}
+.cartopt svg {
+  color: #f35320;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.dropdown{
+  position: absolute;
+  width: 130px;
+  background-color: #f35320;
+  border-radius: 7px;
+  color: #f3f3f3;
+  padding: 10px;
+  margin-left: -70px;
+  margin-top: 2px;
+}
+.dropdown ul{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.dropdown ul li{
+  margin-top: 5px;
+  color: white;
+}
+.dropdown ul li:hover{
+ color: black;
+}
+
+
+.cartopt {
+  padding-bottom: 5px;
+}
+.loginbtn{
+  width: 80px;
+  height: 30px;
+  color: #f35320;
+  background: white;
+  border: 2px solid #f35320;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.menubutton {
+  color: #f35320;
+}
+.togglebar {
+  position: fixed;
+  background-color: #f35320;
+  width: 100%;
+  height: 50px;
+  display: none;
+  top: 0;
+}
+.tgbar {
+  display: flex;
+  margin-top: 4px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.nav_toglogo img {
+  height: 35px;
+}
+.nav_toglogo h1{
+    color: white;
+    font-size: 32px;
+    margin: 0;
+}
+.tgbar svg{
+    color: white;
+}
+.togextranav {
+  height: 100vh;
+  background-color: #f35320;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0;
+}
+.Tnav_logo h1 {
+  margin-top: 50px;
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+}
+.TnavbarItems {
+  margin-top: 40px;
+}
+.TnavbarItems ul{
+    margin: 0;
+    padding: 0;
+}
+.TnavbarItems ul li {
+  color: white;
+  margin-top: 40px;
+  text-align: center;
+  
+}
+
+.TnavbarItems input{
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: none;
+    caret-color: #f35320;
+    margin-top: 70px;
+}
+.TnavbarItems svg{
+    position: relative;
+    left: 41%;
+    margin-top: -70px;
+    color: #f35320;
+}
+.lbtn button{
+    width: 150px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: #f35320;
+    border-radius: 10px;
+    color: white;
+    margin-top: 70px;
+}
+.togclosebtn{
+    margin-top: 50px;
+    color: white;
+}
+.Tnavbar svg:nth-child(1){
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+/*  side cart css start */
+
+.sidecartmain {
+  position: fixed;
+  height: 100vh;
+  width: 430px;
+  background-color: #f35320;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  overflow-x: hidden;
+  transition: 10s;
+  transition: ease-in-out;
+}
+.sidecart {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.sidecart svg {
+  margin: 25px;
+  color: white;
+  cursor: pointer;
+}
+.cartheader h1 {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+.cartitems {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.itemsquantity {
+  display: flex;
+  align-items: center;
+}
+.itemsquantity svg {
+  color: white;
+}
+.itemsquantity h4 {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  font-weight: 400;
+}
+.itemsname h6 {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+.itemsnum h5 {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+.checkoutbtn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+.checkoutbtn button {
+  width: 100%;
+  margin: 0 20px;
+  height: 45px;
+  border: 2px solid white;
+  background-color: #f35320;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.checkoutbtn h6 {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+}
+.checkoutbtn svg {
+  margin-right: 20px;
+  color: white;
+}
+.allitemsdetails {
+  list-style-type: decimal;
+  margin-left: 10px;
+  color: white;
+  font-size: 18px;
+}
+.emptycart h5 {
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 50%;
+  text-align: center;
+  left: 22%;
+}
+.subtotaldiv{
+  padding: 0 35px;
+  position: absolute;
+  bottom: 100px;
+}
+.subtotaldiv h5{
+  color: white;
+}
+
+/* side cart css end */
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+    .mainnavbar {
+      margin: 0;
+    }
+    .togextranav {
+      display: block;
+    }
+    .togglebar {
+      display: block;
+    }
+    .mainallpageshownavbar {
+      display: none;
+    }
+  
+    .navbarup {
+      flex-direction: column;
+      margin: 0;
+    }
+    .navbar {
+      flex-direction: column;
+      margin: 0;
+    }
+    .navbarItems {
+      flex-direction: column;
+    }
+    .navbarItems ul {
+      flex-direction: column;
+    }
+    .navup1 {
+      flex-direction: column;
+    }
+    .navup1 li {
+      text-align: center;
+      margin-right: 0;
+    }
+    .navbarItems input {
+      width: 100%;
+    }
+  }
+
+
+
+
+@media screen and (max-width: 425px) {
+    .mainnavbar {
+      margin: 0;
+    }
+    .togextranav {
+      display: block;
+    }
+    .togglebar {
+      display: block;
+    }
+    .mainallpageshownavbar {
+      display: none;
+    }
+  
+    .navbarup {
+      flex-direction: column;
+      margin: 0;
+    }
+    .navbar {
+      flex-direction: column;
+      margin: 0;
+    }
+    .navbarItems {
+      flex-direction: column;
+    }
+    .navbarItems ul {
+      flex-direction: column;
+    }
+    .navup1 {
+      flex-direction: column;
+    }
+    .navup1 li {
+      text-align: center;
+      margin-right: 0;
+    }
+    .navbarItems input {
+      width: 100%;
+    }
+  }
+
+
+
+@media screen and (max-width: 375px) {
+    .mainnavbar {
+      margin: 0;
+    }
+    .togextranav {
+      display: block;
+    }
+    .togglebar {
+      display: block;
+    }
+    .mainallpageshownavbar {
+      display: none;
+    }
+  
+    .navbarup {
+      flex-direction: column;
+      margin: 0;
+    }
+    .navbar {
+      flex-direction: column;
+      margin: 0;
+    }
+    .navbarItems {
+      flex-direction: column;
+    }
+    .navbarItems ul {
+      flex-direction: column;
+    }
+    .navup1 {
+      flex-direction: column;
+    }
+    .navup1 li {
+      text-align: center;
+      margin-right: 0;
+    }
+    .navbarItems input {
+      width: 100%;
+    }
+    .sidecartmain{
+        width: 375px;
+      }
+      .checkoutbtn{
+        flex-direction: column;
+        padding: 0 20px;
+      }
+      .checkoutbtn button{
+        margin: 10px 0;
+      }
+      .emptycart h5 {
+        color: white;
+        font-size: 22px;
+        font-weight: 400;
+        position: absolute;
+        bottom: 50%;
+        text-align: center;
+        left: 15.5%;
+      }
+  }
+
+
+
+@media screen and (max-width: 320px) {
+  .mainnavbar {
+    margin: 0;
+  }
+  .togextranav {
+    display: block;
+  }
+  .togglebar {
+    display: block;
+  }
+  .mainallpageshownavbar {
+    display: none;
+  }
+
+  .navbarup {
+    flex-direction: column;
+    margin: 0;
+  }
+  .navbar {
+    flex-direction: column;
+    margin: 0;
+  }
+  .navbarItems {
+    flex-direction: column;
+  }
+  .navbarItems ul {
+    flex-direction: column;
+  }
+  .navup1 {
+    flex-direction: column;
+  }
+  .navup1 li {
+    text-align: center;
+    margin-right: 0;
+  }
+  .navbarItems input {
+    width: 100%;
+  }
+  .sidecartmain{
+    width: 320px;
+  }
+  .checkoutbtn{
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .checkoutbtn button{
+    margin: 10px 0;
+  }
+  .emptycart h5 {
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 50%;
+    text-align: center;
+    left: 10%;
+  }
+}

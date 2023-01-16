@@ -1,0 +1,123 @@
+.signinpage{
+    display: flex;  
+    flex-direction: column;
+    text-align: center; 
+    margin: 100px 0;
+    padding: 0 29.5rem;
+}
+.signinpage h1{
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #f35320;
+}
+.signindetails{
+    margin-top: 20px;
+}
+.signinpage img{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+}
+.signinnameelable input{
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 7px;
+    border: 2px solid #f35320;
+    caret-color: #f35320;
+}
+.signindetails button{
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    background-color: #f35320;
+    color: white;
+}
+.signinnameelable p{
+    margin: 0;
+    margin-left: 230px;
+    font-size: 15px;
+    color: #f35320;
+    font-weight: 600;
+}
+.signinbutton{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.signinbutton span{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+/* media cssss */
+
+@media screen and (max-width: 1024px) {
+    .signinpage{
+        padding: 0 15rem;
+    }
+    .signinnameelable p{
+        margin-left: 300px;
+    }
+    
+    }
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .signinpage{
+        padding: 0 5rem;
+    }
+    .signinnameelable p{
+        margin-left: 400px;
+    }
+    
+    }
+
+
+
+
+@media screen and (max-width: 425px) {
+    .signinpage{
+        padding: 0;
+    }
+    .signinnameelable p{
+        margin-left: 280px;
+    }
+    
+    }
+
+
+
+
+@media screen and (max-width: 375px) {
+    .signinpage{
+        padding: 0;
+    }
+    .signinnameelable p{
+        margin-left: 230px;
+    }
+    
+    }
+
+
+
+
+
+@media screen and (max-width: 320px) {
+.signinpage{
+    padding: 0;
+}
+.signinnameelable p{
+    margin-left: 170px;
+}
+
+}
