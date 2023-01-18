@@ -1,15 +1,79 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Checkout.module.css";
+import { loadStripe } from "@stripe/stripe-js";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function Checkout({
-  cartItem,
-  addToCart,
-  removeFromCart,
-  subTotal,
-}) {
+function Checkout({ cartItem, addToCart, removeFromCart, subTotal }) {
+  const router = useRouter();
+  const [pincodes,setPincodes]=useState()
+  const [city,setCity]=useState()
+  const [state,setState]=useState()
+  const { success, canceled } = router.query;
+
+
+
+  const handleChange= async (e)=>{
+    setPincodes(e.target.value)
+    if(e.target.value.length==6){
+      let pins=await fetch("http://localhost:3000/api/pincodes")
+      let pinJson=await pins.json()
+      if(Object.keys(pinJson).includes(e.target.value)){
+        setState(pinJson[e.target.value][1])
+        setCity(pinJson[e.target.value][0])
+      }else{
+        setCity('')
+        setState('')
+      }
+    }else{
+      setCity('')
+      setState('')
+    }
+  }
+
+
+
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  );
+
+  useEffect(() => {
+    if (success !== undefined || canceled !== undefined) {
+      if (success) {
+        toast.success("Order placed! You will receive an email confirmation.", {
+          position: "top-left",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
+      if (canceled) {
+        toast.error(
+          "Order canceled -- continue to shop around and checkout when you’re ready.",
+          {
+            position: "top-left",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
+      }
+    }
+  }, [success, canceled]);
+
   return (
     <>
       <div className="container">
+        <ToastContainer />
         <div className={styles.Checkout}>
           <div className={styles.Ch1}>
             <h1>CHECKOUT</h1>
@@ -39,9 +103,11 @@ function Checkout({
                   <h6>Phone No:</h6>
                   <input type="text" placeholder="Enter Your Phone No Here.." />
                 </div>
-                <div className={styles.nameelable}>
+                <div  className={styles.nameelable}>
                   <h6>City</h6>
                   <input
+                  onChange={handleChange}
+                  value={city}
                     type="text"
                     placeholder="Enter Your City Name Here.."
                   />
@@ -51,12 +117,14 @@ function Checkout({
               <div className={styles.nameinput}>
                 <div className={styles.nameelable}>
                   <h6>State</h6>
-                  <input type="text" placeholder="Enter Your State Here.." />
+                  <input onChange={handleChange} value={state} type="text" placeholder="Enter Your State Here.." />
                 </div>
                 <div className={styles.nameelable}>
                   <h6>Pincode</h6>
                   <input
-                    type="number"
+                    onChange={handleChange}
+                  value={pincodes}
+                    type="text"
                     placeholder="Enter Your PinCode Here.."
                   />
                 </div>
@@ -78,10 +146,10 @@ function Checkout({
 
               <div className={styles.checkallitems}>
                 <ol>
-                  {Object.keys(cartItem).map((k,i) => {
+                  {Object.keys(cartItem).map((k, i) => {
                     return (
                       <li key={k._id}>
-                        <div  className={styles.checkitems}>
+                        <div className={styles.checkitems}>
                           <div className={styles.checkitemsname}>
                             <h6>{cartItem[k].name}</h6>
                           </div>
@@ -131,18 +199,22 @@ function Checkout({
                 </ol>
                 <hr className={styles.checkhr} />
                 <div className={styles.sbbtntotal}>
-                <div className={styles.subtotal}>
-                  <h5>Sub Total : ₹{subTotal}</h5>
-                </div>
-                <div className={styles.paybutton}>
-                  <button>Pay ₹{subTotal}</button>
-          </div>
+                  <div className={styles.subtotal}>
+                    <h5>Sub Total : ₹{subTotal}</h5>
+                  </div>
+                  <div className={styles.paybutton}>
+                    <form action="/api/checkout_sessions" method="POST">
+                      <section>
+                        <button type="submit" role="link">
+                          Pay ₹{subTotal}
+                        </button>
+                      </section>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
     </>
