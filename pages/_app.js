@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import LoadingBar from "react-top-loading-bar";
 
+
 export default function App({ Component, pageProps }) {
   const [user, setUser] = useState({ value: null });
   const [key, setkey] = useState(0);
@@ -39,8 +40,6 @@ export default function App({ Component, pageProps }) {
       setkey(Math.random());
     }
   }, [router.query]);
-
-
 
   const addToCart = (itemCode, qty, price, name) => {
     let newCart = cart;
@@ -79,10 +78,8 @@ export default function App({ Component, pageProps }) {
     let keys = Object.keys(myCart);
     for (let i = 0; i < keys.length; i++) {
       subt += myCart[keys[i]].price * myCart[keys[i]].qty;
-  
     }
     setSubTotal(subt);
-   
   };
 
   const removeFromCart = (itemCode, qty, price, name) => {
@@ -122,16 +119,18 @@ export default function App({ Component, pageProps }) {
         clearCart={clearCart}
         subTotal={subTotal}
       />
-      <Component
-        buyNow={buyNow}
-        cartItem={cart}
-        addToCart={addToCart}
-        removeFromCart={removeFromCart}
-        clearCart={clearCart}
-        subTotal={subTotal}
-        {...pageProps}
-      />
-      <Footer />
+  
+          <Component
+            buyNow={buyNow}
+            cartItem={cart}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+            clearCart={clearCart}
+            subTotal={subTotal}
+            {...pageProps}
+          />
+          <Footer />
+        
     </>
   );
 }

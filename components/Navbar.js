@@ -30,7 +30,7 @@ function Navbar({
   };
   return (
     <>
-      <div className={styles.mainnavbar}>
+      <div className={styles.mainnavbar} id="mainnavbar">
         <div className={styles.togglebar}>
           <div className="container">
             <div className={styles.tgbar}>

@@ -18,6 +18,7 @@ function myaccount() {
   const [password,setPassword]=useState();
   const [cpassword,setCpassword]=useState()
   useEffect(() => {
+    const user=JSON.parse(!localStorage.getItem('token'))
     if (!localStorage.getItem("token")) {
       router.push("/");
     }
@@ -26,6 +27,17 @@ function myaccount() {
       setEmail(user.email);
     }
   }, []);
+
+  const handleSubmit=async()=>{
+    let data={token:user.token}
+    let a= await fetch('http://localhost:3000/api/getuser',{
+      method:"POST",
+      headers:{
+        'Content-Type':'application/json',
+      },
+      body:JSON.stringify(data)
+    })
+  }
   return (
     <>
       <div className="container">
@@ -111,7 +123,7 @@ function myaccount() {
               </div>
 
               <div className={styles.paybutton}>
-                <button>Update Profile</button>
+                <button onClick={handleSubmit}>Update Profile</button>
               </div>
 
               <br />
